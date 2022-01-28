@@ -12,12 +12,28 @@ const userDetails = {
   },
 };
 
-userDetails.printDetails();
-
 const userDetails2 = {
   name: 'Arun',
   age: '29',
   job: 'Software Engineer',
 };
 
+const userDetails3 = {
+  name: 'Kriti',
+  age: '25',
+  job: 'Software Engineer',
+  calcDOB: function () {
+    console.log(`
+    Your DOB is ${2022 - this.age}
+    `);
+  },
+};
+
+userDetails.printDetails();
+userDetails3.calcDOB.call(userDetails);
+
 userDetails.printDetails.call(userDetails2);
+userDetails3.calcDOB.call(userDetails2);
+
+userDetails.printDetails.call(userDetails3);
+userDetails3.calcDOB();
